@@ -426,7 +426,6 @@ function copyToClipboard() {
 <a class="prev" onclick="changeImage(-1)">❮</a>
 <a class="next" onclick="changeImage(1)">❯</a>
 </div>
-
 <script>
 // Get elements
 const modal = document.getElementById("myModal");
@@ -441,6 +440,11 @@ const closeBtn = document.getElementsByClassName("close")[0];
 
 let currentIndex = 0;
 
+// Function to prevent touch scrolling on iPhone
+function preventTouchScroll(e) {
+    e.preventDefault();
+}
+
 // Add click event to each gallery item
 galleryItems.forEach((item, index) => {
     item.addEventListener("click", function () {
@@ -454,7 +458,7 @@ function showImage(index) {
     const item = galleryItems[index];
     modal.style.display = "flex"; // Show modal
     modalImg.src = item.querySelector("img").src;
-    modalBackground.src = item.querySelector("img").src;
+    modalBackground.src = item.querySelector("img").src; // Note: This should be style.backgroundImage if it's a background
     modalTitle.textContent = item.querySelector(".title").textContent;
     modalPrice.textContent = item.querySelector(".price").textContent;
     modalLength.textContent = item.querySelector(".length").textContent;
@@ -462,6 +466,8 @@ function showImage(index) {
 
     // Disable scrolling
     document.body.style.overflow = "hidden";
+    // Prevent touchmove on iPhone
+    document.addEventListener("touchmove", preventTouchScroll, { passive: false });
 }
 
 // Close modal
@@ -470,6 +476,8 @@ function closeModal() {
 
     // Enable scrolling
     document.body.style.overflow = "auto";
+    // Remove touchmove prevention
+    document.removeEventListener("touchmove", preventTouchScroll);
 }
 
 closeBtn.addEventListener("click", closeModal);
@@ -509,7 +517,6 @@ document.addEventListener("keydown", function (event) {
         }
     }
 });
-
 </script>
 </body>
 </html>

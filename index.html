@@ -159,14 +159,15 @@ left: 0;
 .next {
 right: 0;
 }
+.prev:active, .next:active, 
 .prev:hover, .next:hover {
 color: white;
 background: none;
 }
-.prev:active, .next:active {
-color: white;
-background: none;
+.prev, .next {
+-webkit-tap-highlight-color: transparent;
 }
+
 header {
 max-width: 1200px;
 padding: 20px;

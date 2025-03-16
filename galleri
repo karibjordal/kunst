@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery Portfolio</title>
+<style>
+body {
+font-family: arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #222;
+background-color: #dddd;
+}
+.container {
+max-width: 1200px;
+margin: auto;
+padding: 20px;
+}
+.about-artist {
+background: white;
+padding: 20px;
+text-align: left;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+margin-bottom: 20px;
+min-height: 190px;
+}
+.about-artist h2 {
+margin-top: 0;
+}
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+.gallery-item {border-radius: 8px;
+background: white;
+padding: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out;
+cursor: pointer;
+}
+.gallery-item:hover {
+transform: scale(1.05);
+}
+.gallery-item img {
+width: 100%;
+}
+.title-price-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.title {
+margin: 5px 0;
+font-weight: bold;
+}
+.price {
+color: #e7396d;
+}
+.height, 
+.length {
+font-size: 12px;
+font-weight: normal;
+text-align: left;
+color: #555;
+}
+
+/* Modal Styles */
+.modal {
+display: none; 
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: grey;
+justify-content: center; 
+align-items: center;
+padding: 0;
+margin: 0;
+}
+.modal-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+filter: blur(50px);
+opacity: 0.7;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+z-index: 1;
+}
+.modal-content {
+display: block;
+max-width: 80%;
+max-height: 70%;
+position: relative;
+z-index: 2;
+}
+.modal-info {
+color: black;
+z-index: 2;
+padding: 20px;
+position: absolute;
+bottom: 0;
+}
+.modal-title {
+text-align: center;
+font-weight: bold;
+left: 0;
+}
+.modal-price {
+text-align: center;
+color: black;
+font-size: 16px;
+}
+.modal-height, 
+.modal-length {
+margin-left: 0px;
+font-size: 12px;
+font-weight: normal;
+text-align: center;
+color: white;
+color: black;
+}
+.close {
+position: absolute;
+top: 15px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+z-index: 2;
+}
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+user-select: none;
+z-index: 2;
+}
+.prev {
+left: 0;
+}
+.next {
+right: 0;
+}
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+</style>
+<style>
+header {
+max-width: 1200px;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 auto; /* This centers the header */
+}
+
+h3 {
+margin: 0;
+color: white;
+color: black;
+font-family: arial;
+}
+
+.social-icons a {
+margin: 0 10px;
+display: inline-block;
+transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+transform: scale(1.1);
+}
+
+.social-icons img {
+width: 30px;
+height: 30px;
+}
+</style>
+</head>
+<header>
+<h3>KUNST GALLERI </h3>
+<img src="images/name.png" alt="name" style="width: 280px; height: auto;" >
+<div class="social-icons">
+<a href="https://instagram.com/yourusername" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+</a>
+<a href="https://facebook.com/yourusername" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+</a>
+</div>
+</header>
+
+<body>
+<div class="container">
+<div class="about-artist">
+<img src="images/kunstner.png" alt="A small portrait" style="width: 130px; height: auto; float: left; margin-right: 15px; margin-top: 15px;">
+<p><b>Kunstner:</b> Kari Fure Bjordal</p>
+<p>Jeg blir alltid inspirert av naturen, noe jeg har hatt med meg siden barndommen. Jeg vokste opp med gartnerforeldre og måtte tidlig trå til med plantestell i drivhus og gartneri. Vi var alltid på tur i naturen i Molde, hvor jeg vokste opp, omgitt av en flott fjord og vakre fjell som omkranser byen.  
+</p><p>
+I mitt voksne liv har jeg bodd i Oslo/Bærum, som også har mye flott skog. Byen er en vakker storby med fjord og øyer. Jeg tenker at alt man ser i naturen, som trær eller steinarter i berg, på en måte blir gjenspeilet i Oslos bygg og kultur. Land og by går hånd i hånd, og jeg liker kontrastene her på Østlandet.  
+</p><p>
+Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maleriene jeg selger, er originalmalerier.<b> Ta kontakt om du ønsker å kjøpe et maleri.<b></p>
+</div>
+
+<div class="gallery">
+<div class="gallery-item" data-index="2">
+<img src="images/skardsvik.png" alt="Skardsvik, Island">
+<div class="title-price-container">
+<div class="title">Skardsvik, Island</div>
+<div class="price">4500 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 1m</div>
+<div class="height"><b>Høyde:</b> 80cm</div>
+</div>
+
+<div class="gallery-item" data-index="3">
+<img src="images/foss.png" alt="Seljalandsfoss, Island">
+<div class="title-price-container">
+<div class="title">Seljalandsfoss, Island</div>
+<div class="price">7000 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 91,5cm</div>
+<div class="height"><b>Høyde:</b> 73cm</div>
+</div>
+
+<div class="gallery-item" data-index="1">
+<img src="images/hav.png" alt="Sommer natt">
+<div class="title-price-container">
+<div class="title">Sommer natt</div>
+<div class="price">2500 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 64cm</div>
+<div class="height"><b>Høyde:</b> 53cm</div>
+</div>
+
+<div class="gallery-item" data-index="9">
+<img src="images/vinterdvale.png" alt="Naturen i vinterdvale">
+<div class="title-price-container">
+<div class="title">Naturen i vinterdvale</div>
+<div class="price">3000 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 50cm</div>
+<div class="height"><b>Høyde:</b> 60cm</div>
+</div>
+
+<div class="gallery-item" data-index="6">
+<img src="images/høst.png" alt="Høst">
+<div class="title-price-container">
+<div class="title">Høst</div>
+<div class="price">3500 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 60cm</div>
+<div class="height"><b>Høyde:</b> 60cm</div>
+</div>
+
+<div class="gallery-item" data-index="5">
+<img src="images/grini.png" alt="Høst ved Grini bro">
+<div class="title-price-container">
+<div class="title">Høst ved Grini bro</div>
+<div class="price">4000 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 70cm</div>
+<div class="height"><b>Høyde:</b> 70cm</div>
+</div>
+
+<div class="gallery-item" data-index="4">
+<img src="images/kirkjufell.png" alt="kirkjufell, Island">
+<div class="title-price-container">
+<div class="title">Kirkjufell, Island</div>
+<div class="price">4500 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 80cm</div>
+<div class="height"><b>Høyde:</b> 80cm</div>
+</div>
+
+<div class="gallery-item" data-index="7">
+<img src="images/isflak.png" alt="Seilende isflak">
+<div class="title-price-container">
+<div class="title">Seilende isflak</div>
+<div class="price">2000 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 50cm</div>
+<div class="height"><b>Høyde:</b> 40cm</div>
+</div>
+
+<div class="gallery-item" data-index="0">
+<img src="images/barcode.png" alt="Barcode">
+<div class="title-price-container">
+<div class="title">Barcode</div>
+<div class="price">7 000 NOK</div>
+</div>
+<div class="length"><b>Bredde:</b> 99.5cm</div>
+<div class="height"><b>Høyde:</b> 70cm</div>
+</div>
+
+<div class="gallery-item" data-index="8">
+<img src="images/krystall.png" alt="Krystall flak">
+<div class="title-price-container">
+<div class="title">Krystallflak</div>
+<div class="price">5000 kr</div>
+</div>
+<div class="length"><b>Bredde:</b> 1m</div>
+<div class="height"><b>Høyde:</b> 50cm</div>
+</div>
+</div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+<img id="modalBackground" class="modal-background">
+<span class="close">×</span>
+<img class="modal-content" id="img01">
+<div class="modal-info">
+<div class="modal-title" id="modalTitle"></div>
+<div class="modal-price" id="modalPrice"></div>
+<div class="modal-length" id="modalLength"></div>
+<div class="modal-height" id="modalHeight"></div>
+</div>
+<a class="prev" onclick="changeImage(-1)">❮</a>
+<a class="next" onclick="changeImage(1)">❯</a>
+</div>
+
+<script>
+// Get elements
+const modal = document.getElementById("myModal");
+const modalBackground = document.getElementById("modalBackground");
+const modalImg = document.getElementById("img01");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const modalLength = document.getElementById("modalLength");
+const modalHeight = document.getElementById("modalHeight");
+const galleryItems = document.querySelectorAll(".gallery-item");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+let currentIndex = 0;
+
+// Add click event to each gallery item
+galleryItems.forEach(item => {
+item.addEventListener('click', function() {
+currentIndex = parseInt(this.getAttribute('data-index'));
+showImage(currentIndex);
+});
+});
+
+// Show image and info in modal
+function showImage(index) {
+const item = galleryItems[index];
+modal.style.display = "flex"; // Set to flex when showing
+modalImg.src = item.querySelector('img').src;
+modalBackground.src = item.querySelector('img').src;
+modalTitle.textContent = item.querySelector('.title').textContent;
+modalPrice.textContent = item.querySelector('.price').textContent;
+modalLength.textContent = item.querySelector('.length').textContent;
+modalHeight.textContent = item.querySelector('.height').textContent;
+}
+
+// Close modal
+closeBtn.onclick = function() {
+modal.style.display = "none";
+}
+
+// Navigate between images
+function changeImage(n) {
+currentIndex += n;
+if (currentIndex >= galleryItems.length) {
+currentIndex = 0;
+}
+if (currentIndex < 0) {
+currentIndex = galleryItems.length - 1;
+}
+showImage(currentIndex);
+}
+
+// Close modal when clicking outside image
+window.onclick = function(event) {
+if (event.target == modalBackground) {
+modal.style.display = "none";
+}
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+if (modal.style.display === "flex") {
+switch(event.key) {
+case 'ArrowLeft':
+changeImage(-1);
+break;
+case 'ArrowRight':
+changeImage(1);
+break;
+case 'Escape':
+modal.style.display = "none";
+break;
+}
+}
+});
+</script>
+</body>
+</html>

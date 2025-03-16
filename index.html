@@ -38,6 +38,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 border-radius: 8px;
 margin-bottom: 20px;
 min-height: 190px;
+font-size: 13px;
 }
 .about-artist h2 {
 margin-top: 0;
@@ -239,12 +240,18 @@ height: 30px;
 
   .price {
     font-size: 14px;
+    margin-bottom: 2px; 
   }
 
   .length,
   .height {
     font-size: 11px;
   }
+  
+  .about-artist {
+font-size: 12px;
+}
+
 }
 
 /* For smallest iPhone SE (e.g., ~375px width) */
@@ -270,12 +277,18 @@ height: 30px;
 
   .price {
     font-size: 12px;
+    margin-bottom: 2px; 
   }
 
   .length,
   .height {
     font-size: 10px;
   }
+  
+    .about-artist {
+font-size: 12px;
+}
+
 }
 
 /* Ensure images scale properly on all screens */
@@ -302,7 +315,9 @@ height: 30px;
 <div class="container">
 <div class="about-artist">
 <img src="kunstner.png" alt="A small portrait" style="width: 130px; height: auto; float: left; margin-right: 15px; margin-top: 15px;">
-<p><b>Kunstner:</b> Kari Fure Bjordal</p>
+<p><b>Kunstner:</b><br>
+Kari Fure Bjordal</p>
+
 <p>Jeg blir alltid inspirert av naturen, noe jeg har hatt med meg siden barndommen. Jeg vokste opp med gartnerforeldre og måtte tidlig trå til med plantestell i drivhus og gartneri. Vi var alltid på tur i naturen i Molde, hvor jeg vokste opp, omgitt av en flott fjord og vakre fjell som omkranser byen.  
 </p><p>
 I mitt voksne liv har jeg bodd i Oslo/Bærum, som også har mye flott skog. Byen er en vakker storby med fjord og øyer. Jeg tenker at alt man ser i naturen, som trær eller steinarter i berg, på en måte blir gjenspeilet i Oslos bygg og kultur. Land og by går hånd i hånd, og jeg liker kontrastene her på Østlandet.  
@@ -357,7 +372,7 @@ function copyToClipboard() {
 <div class="gallery-item" data-index="9">
 <img src="vinterdvale.png" alt="Naturen i vinterdvale">
 <div class="title-price-container">
-<div class="title">Naturen i vinterdvale</div>
+<div class="title">Vinterdvale</div>
 <div class="price">3000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 50cm</div>

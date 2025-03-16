@@ -198,6 +198,73 @@ transform: scale(1.1);
 width: 30px;
 height: 30px;
 }
+
+
+
+
+/* For largest iPhone (e.g., iPhone 14 Pro Max, ~430px width) */
+@media (max-width: 450px) and (min-width: 400px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Fits ~3-4 items */
+    gap: 12px; /* Slightly reduced gap */
+  }
+
+  .gallery-item {
+    padding: 8px; /* Slightly less padding */
+  }
+
+  .title {
+    font-size: 14px; /* Readable but not oversized */
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .length,
+  .height {
+    font-size: 11px; /* Slightly smaller but clear */
+  }
+
+  .title-price-container {
+    flex-wrap: wrap; /* Prevent overflow */
+  }
+}
+
+/* For smallest iPhone SE (e.g., ~375px width) */
+@media (max-width: 399px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)); /* Fits ~3 items */
+    gap: 10px; /* Compact gap */
+  }
+
+  .gallery-item {
+    padding: 6px; /* More compact padding */
+  }
+
+  .title {
+    font-size: 12px; /* Smaller but readable */
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .length,
+  .height {
+    font-size: 10px; /* Smallest readable size */
+  }
+
+  .title-price-container {
+    flex-wrap: wrap; /* Prevent overflow */
+  }
+}
+
+/* Ensure images scale properly on all screens */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
 </style>
 </head>
 <header>
@@ -222,7 +289,10 @@ height: 30px;
 </p><p>
 I mitt voksne liv har jeg bodd i Oslo/Bærum, som også har mye flott skog. Byen er en vakker storby med fjord og øyer. Jeg tenker at alt man ser i naturen, som trær eller steinarter i berg, på en måte blir gjenspeilet i Oslos bygg og kultur. Land og by går hånd i hånd, og jeg liker kontrastene her på Østlandet.  
 </p><p>
-Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maleriene jeg selger, er originalmalerier.<b> Send en mail til <a href="mailto: karibjordal@hotmail.com" id="emailLink" onclick="copyToClipboard()"> karibjordal@hotmail.com</a> om du ønsker å kjøpe et maleri. <b></p>
+Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maleriene jeg selger, er originalmalerier.</p>
+
+<p><b> 
+Send en mail til <a href="mailto: karibjordal@hotmail.com" id="emailLink" onclick="copyToClipboard()"> karibjordal@hotmail.com</a> om du ønsker å kjøpe et maleri. <b></p>
 </div>
 
 <script>

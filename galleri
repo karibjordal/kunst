@@ -199,7 +199,7 @@ height: 30px;
 </head>
 <header>
 <h3>KUNST GALLERI </h3>
-<img src="images/name.png" alt="name" style="width: 280px; height: auto;" >
+<img src="name.png" alt="name" style="width: 280px; height: auto;" >
 <div class="social-icons">
 <a href="https://instagram.com/yourusername" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
@@ -213,7 +213,7 @@ height: 30px;
 <body>
 <div class="container">
 <div class="about-artist">
-<img src="images/kunstner.png" alt="A small portrait" style="width: 130px; height: auto; float: left; margin-right: 15px; margin-top: 15px;">
+<img src="kunstner.png" alt="A small portrait" style="width: 130px; height: auto; float: left; margin-right: 15px; margin-top: 15px;">
 <p><b>Kunstner:</b> Kari Fure Bjordal</p>
 <p>Jeg blir alltid inspirert av naturen, noe jeg har hatt med meg siden barndommen. Jeg vokste opp med gartnerforeldre og måtte tidlig trå til med plantestell i drivhus og gartneri. Vi var alltid på tur i naturen i Molde, hvor jeg vokste opp, omgitt av en flott fjord og vakre fjell som omkranser byen.  
 </p><p>
@@ -234,7 +234,7 @@ function copyToClipboard() {
 </script>
 <div class="gallery">
 <div class="gallery-item" data-index="2">
-<img src="images/skardsvik.png" alt="Skardsvik, Island">
+<img src="skardsvik.png" alt="Skardsvik, Island">
 <div class="title-price-container">
 <div class="title">Skardsvik, Island</div>
 <div class="price">4500 kr</div>
@@ -244,7 +244,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="3">
-<img src="images/foss.png" alt="Seljalandsfoss, Island">
+<img src="foss.png" alt="Seljalandsfoss, Island">
 <div class="title-price-container">
 <div class="title">Seljalandsfoss, Island</div>
 <div class="price">7000 kr</div>
@@ -254,7 +254,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="1">
-<img src="images/hav.png" alt="Sommer natt">
+<img src="hav.png" alt="Sommer natt">
 <div class="title-price-container">
 <div class="title">Sommer natt</div>
 <div class="price">2500 kr</div>
@@ -264,7 +264,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="9">
-<img src="images/vinterdvale.png" alt="Naturen i vinterdvale">
+<img src="vinterdvale.png" alt="Naturen i vinterdvale">
 <div class="title-price-container">
 <div class="title">Naturen i vinterdvale</div>
 <div class="price">3000 kr</div>
@@ -274,7 +274,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="6">
-<img src="images/høst.png" alt="Høst">
+<img src="høst.png" alt="Høst">
 <div class="title-price-container">
 <div class="title">Høst</div>
 <div class="price">3500 kr</div>
@@ -284,7 +284,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="5">
-<img src="images/grini.png" alt="Høst ved Grini bro">
+<img src="grini.png" alt="Høst ved Grini bro">
 <div class="title-price-container">
 <div class="title">Høst ved Grini bro</div>
 <div class="price">4000 kr</div>
@@ -294,7 +294,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="4">
-<img src="images/kirkjufell.png" alt="kirkjufell, Island">
+<img src="kirkjufell.png" alt="kirkjufell, Island">
 <div class="title-price-container">
 <div class="title">Kirkjufell, Island</div>
 <div class="price">4500 kr</div>
@@ -304,7 +304,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="7">
-<img src="images/isflak.png" alt="Seilende isflak">
+<img src="isflak.png" alt="Seilende isflak">
 <div class="title-price-container">
 <div class="title">Seilende isflak</div>
 <div class="price">2000 kr</div>
@@ -314,7 +314,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="0">
-<img src="images/barcode.png" alt="Barcode">
+<img src="barcode.png" alt="Barcode">
 <div class="title-price-container">
 <div class="title">Barcode</div>
 <div class="price">7000 kr</div>
@@ -324,7 +324,7 @@ function copyToClipboard() {
 </div>
 
 <div class="gallery-item" data-index="8">
-<img src="images/krystall.png" alt="Krystall flak">
+<img src="krystall.png" alt="Krystall flak">
 <div class="title-price-container">
 <div class="title">Krystallflak</div>
 <div class="price">5000 kr</div>

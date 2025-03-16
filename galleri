@@ -34,7 +34,8 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 20px;
 }
-.gallery-item {border-radius: 8px;
+.gallery-item {
+border-radius: 8px;
 background: white;
 padding: 10px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -218,9 +219,19 @@ height: 30px;
 </p><p>
 I mitt voksne liv har jeg bodd i Oslo/Bærum, som også har mye flott skog. Byen er en vakker storby med fjord og øyer. Jeg tenker at alt man ser i naturen, som trær eller steinarter i berg, på en måte blir gjenspeilet i Oslos bygg og kultur. Land og by går hånd i hånd, og jeg liker kontrastene her på Østlandet.  
 </p><p>
-Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maleriene jeg selger, er originalmalerier.<b> Ta kontakt om du ønsker å kjøpe et maleri.<b></p>
+Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maleriene jeg selger, er originalmalerier.<b> Send en mail til <a href="mailto: karibjordal@hotmail.com" id="emailLink" onclick="copyToClipboard()"> karibjordal@hotmail.com</a> om du ønsker å kjøpe et maleri. <b></p>
 </div>
 
+<script>
+function copyToClipboard() {
+    const email = "karibjordal@hotmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        alert("E-postadressen er kopiert til utklippstavlen!");
+    }).catch(err => {
+        console.error("Kunne ikke kopiere", err);
+    });
+}
+</script>
 <div class="gallery">
 <div class="gallery-item" data-index="2">
 <img src="images/skardsvik.png" alt="Skardsvik, Island">
@@ -306,7 +317,7 @@ Jeg har tre års kunstutdanning fra Nydalen Kunstskole (2019–2024). Alle maler
 <img src="images/barcode.png" alt="Barcode">
 <div class="title-price-container">
 <div class="title">Barcode</div>
-<div class="price">7 000 NOK</div>
+<div class="price">7000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 99.5cm</div>
 <div class="height"><b>Høyde:</b> 70cm</div>

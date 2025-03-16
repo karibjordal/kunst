@@ -30,10 +30,25 @@ min-height: 190px;
 margin-top: 0;
 }
 .gallery {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
+
+/* Ensure at least 3 images per row on mobile */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Force 3 images per row */
+  }
+}
+
+/* Ensure 2 images per row for very small screens */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* At least 2 images per row */
+  }
+}
+
 .gallery-item {
 border-radius: 8px;
 background: white;

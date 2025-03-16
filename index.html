@@ -160,11 +160,8 @@ left: 0;
 right: 0;
 }
 .prev:hover, .next:hover {
-background-color: rgba(0,0,0,0.8);
+color: black;
 }
-
-</style>
-<style>
 header {
 max-width: 1200px;
 padding: 20px;
@@ -237,7 +234,7 @@ function copyToClipboard() {
 <img src="skardsvik.png" alt="Skardsvik, Island">
 <div class="title-price-container">
 <div class="title">Skardsvik, Island</div>
-<div class="price">4 500 NOK</div>
+<div class="price">4500 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 1m</div>
 <div class="height"><b>Høyde:</b> 80cm</div>
@@ -247,7 +244,7 @@ function copyToClipboard() {
 <img src="foss.png" alt="Seljalandsfoss, Island">
 <div class="title-price-container">
 <div class="title">Seljalandsfoss, Island</div>
-<div class="price">7 000 NOK</div>
+<div class="price">7000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 91,5cm</div>
 <div class="height"><b>Høyde:</b> 73cm</div>
@@ -257,7 +254,7 @@ function copyToClipboard() {
 <img src="hav.png" alt="Sommer natt">
 <div class="title-price-container">
 <div class="title">Sommer natt</div>
-<div class="price">2 500 NOK</div>
+<div class="price">2500 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 64cm</div>
 <div class="height"><b>Høyde:</b> 53cm</div>
@@ -287,7 +284,7 @@ function copyToClipboard() {
 <img src="grini.png" alt="Høst ved Grini bro">
 <div class="title-price-container">
 <div class="title">Høst ved Grini bro</div>
-<div class="price">4 000 NOK</div>
+<div class="price">4000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 70cm</div>
 <div class="height"><b>Høyde:</b> 70cm</div>
@@ -307,7 +304,7 @@ function copyToClipboard() {
 <img src="isflak.png" alt="Seilende isflak">
 <div class="title-price-container">
 <div class="title">Seilende isflak</div>
-<div class="price">2 000 NOK</div>
+<div class="price">2000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 50cm</div>
 <div class="height"><b>Høyde:</b> 40cm</div>
@@ -317,7 +314,7 @@ function copyToClipboard() {
 <img src="barcode.png" alt="Barcode">
 <div class="title-price-container">
 <div class="title">Barcode</div>
-<div class="price">7 000 NOK</div>
+<div class="price">7000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 99.5cm</div>
 <div class="height"><b>Høyde:</b> 70cm</div>
@@ -327,7 +324,7 @@ function copyToClipboard() {
 <img src="krystall.png" alt="Krystall flak">
 <div class="title-price-container">
 <div class="title">Krystallflak</div>
-<div class="price">5 000 NOK</div>
+<div class="price">5000 kr</div>
 </div>
 <div class="length"><b>Bredde:</b> 1m</div>
 <div class="height"><b>Høyde:</b> 50cm</div>
@@ -365,65 +362,74 @@ const closeBtn = document.getElementsByClassName("close")[0];
 let currentIndex = 0;
 
 // Add click event to each gallery item
-galleryItems.forEach(item => {
-item.addEventListener('click', function() {
-currentIndex = parseInt(this.getAttribute('data-index'));
-showImage(currentIndex);
-});
+galleryItems.forEach((item, index) => {
+    item.addEventListener("click", function () {
+        currentIndex = index;
+        showImage(currentIndex);
+    });
 });
 
 // Show image and info in modal
 function showImage(index) {
-const item = galleryItems[index];
-modal.style.display = "flex"; // Set to flex when showing
-modalImg.src = item.querySelector('img').src;
-modalBackground.src = item.querySelector('img').src;
-modalTitle.textContent = item.querySelector('.title').textContent;
-modalPrice.textContent = item.querySelector('.price').textContent;
-modalLength.textContent = item.querySelector('.length').textContent;
-modalHeight.textContent = item.querySelector('.height').textContent;
+    const item = galleryItems[index];
+    modal.style.display = "flex"; // Show modal
+    modalImg.src = item.querySelector("img").src;
+    modalBackground.src = item.querySelector("img").src;
+    modalTitle.textContent = item.querySelector(".title").textContent;
+    modalPrice.textContent = item.querySelector(".price").textContent;
+    modalLength.textContent = item.querySelector(".length").textContent;
+    modalHeight.textContent = item.querySelector(".height").textContent;
+
+    // Disable scrolling
+    document.body.style.overflow = "hidden";
 }
 
 // Close modal
-closeBtn.onclick = function() {
-modal.style.display = "none";
+function closeModal() {
+    modal.style.display = "none";
+
+    // Enable scrolling
+    document.body.style.overflow = "auto";
 }
+
+closeBtn.addEventListener("click", closeModal);
 
 // Navigate between images
 function changeImage(n) {
-currentIndex += n;
-if (currentIndex >= galleryItems.length) {
-currentIndex = 0;
-}
-if (currentIndex < 0) {
-currentIndex = galleryItems.length - 1;
-}
-showImage(currentIndex);
+    currentIndex += n;
+    if (currentIndex >= galleryItems.length) {
+        currentIndex = 0;
+    }
+    if (currentIndex < 0) {
+        currentIndex = galleryItems.length - 1;
+    }
+    showImage(currentIndex);
 }
 
-// Close modal when clicking outside image
-window.onclick = function(event) {
-if (event.target == modalBackground) {
-modal.style.display = "none";
-}
-}
+// Close modal when clicking outside the modal content
+window.addEventListener("click", function (event) {
+    if (event.target === modalBackground) {
+        closeModal();
+    }
+});
 
 // Keyboard navigation
-document.addEventListener('keydown', function(event) {
-if (modal.style.display === "flex") {
-switch(event.key) {
-case 'ArrowLeft':
-changeImage(-1);
-break;
-case 'ArrowRight':
-changeImage(1);
-break;
-case 'Escape':
-modal.style.display = "none";
-break;
-}
-}
+document.addEventListener("keydown", function (event) {
+    if (modal.style.display === "flex") {
+        switch (event.key) {
+            case "ArrowLeft":
+                changeImage(-1);
+                break;
+            case "ArrowRight":
+                changeImage(1);
+                break;
+            case "Escape":
+                closeModal();
+                break;
+        }
+    }
 });
+
 </script>
 </body>
 </html>

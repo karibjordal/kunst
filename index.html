@@ -206,15 +206,21 @@ height: 30px;
 @media (max-width: 450px) and (min-width: 400px) {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Fits ~3-4 items */
-    gap: 12px; /* Slightly reduced gap */
+    gap: 12px;
   }
 
   .gallery-item {
-    padding: 8px; /* Slightly less padding */
+    padding: 8px;
+  }
+
+  .title-price-container {
+    flex-direction: column; /* Stack title and price vertically */
+    align-items: flex-start; /* Align left for cleaner look */
   }
 
   .title {
-    font-size: 14px; /* Readable but not oversized */
+    font-size: 14px;
+    margin-bottom: 2px; /* Small space between title and price */
   }
 
   .price {
@@ -223,11 +229,7 @@ height: 30px;
 
   .length,
   .height {
-    font-size: 11px; /* Slightly smaller but clear */
-  }
-
-  .title-price-container {
-    flex-wrap: wrap; /* Prevent overflow */
+    font-size: 11px;
   }
 }
 
@@ -235,15 +237,21 @@ height: 30px;
 @media (max-width: 399px) {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)); /* Fits ~3 items */
-    gap: 10px; /* Compact gap */
+    gap: 10px;
   }
 
   .gallery-item {
-    padding: 6px; /* More compact padding */
+    padding: 6px;
+  }
+
+  .title-price-container {
+    flex-direction: column; /* Stack title and price vertically */
+    align-items: flex-start; /* Align left */
   }
 
   .title {
-    font-size: 12px; /* Smaller but readable */
+    font-size: 12px;
+    margin-bottom: 2px; /* Small space between title and price */
   }
 
   .price {
@@ -252,11 +260,7 @@ height: 30px;
 
   .length,
   .height {
-    font-size: 10px; /* Smallest readable size */
-  }
-
-  .title-price-container {
-    flex-wrap: wrap; /* Prevent overflow */
+    font-size: 10px;
   }
 }
 
